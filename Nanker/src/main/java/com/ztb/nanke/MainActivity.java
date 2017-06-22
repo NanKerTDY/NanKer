@@ -1,21 +1,26 @@
 package com.ztb.nanke;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 
+import com.ztb.nanke.adapter.HomeAdapter;
+import com.ztb.nanke.common.MyDecoration;
 import com.ztb.nankerlibrary.base.BaseActivity;
-import com.ztb.nankerlibrary.utils.LogUtil;
 
-import org.litepal.tablemanager.Connector;
+import java.util.ArrayList;
 
 /**
  * Created by nanker on 2017/4/20.
  */
-
 public class MainActivity extends BaseActivity {
-    Button mName;
+    private Button mName;
+    private RecyclerView mRecyclerView;
+    private ArrayList<String> mDatas;
+    private RecyclerView.Adapter mAdapter;
+
 
     @Override
     protected int getLayoutId() {
@@ -25,27 +30,26 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initData();
         mName = (Button) findViewById(R.id.tv_name);
-        MySqLiteHelper sqLiteHelper = new MySqLiteHelper(this,"nankes.db",null,1);
-        SQLiteDatabase db = sqLiteHelper.getWritableDatabase();
-        db.execSQL("insert into pepoles (name ,age ,phone) values('zhangsan' , 18 , '1008611');");
-//         String str = db.execSQL("select * from pepoles where 'zhangsan'");
-//        mName.setText();
-        mName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mName.setText("111");
-                LogUtil.debug("dianjil");
-                runnable.run();
-            }
-        });
+        mRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerview);
+//设置布局管理器
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//设置adapter
+        mRecyclerView.setAdapter(mAdapter = new HomeAdapter(this,mDatas));
+//设置Item增加、移除动画
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//添加分割线
+        //这句就是添加我们自定义的分隔线
+        mRecyclerView.addItemDecoration(new MyDecoration(getApplicationContext(), MyDecoration.HORIZONTAL_LIST));
     }
-
-    Runnable runnable = new Runnable() {
-        public void run() {
-            mName.setText("1111");
-            SQLiteDatabase db = Connector.getDatabase();
-            db.execSQL("insert into Pepoles (name ,age ) values('zhangsan' , 18 );");
+    protected void initData()
+    {
+        mDatas = new ArrayList<String>();
+        for (int i = 'A'; i < 'z'; i++)
+        {
+            mDatas.add("" + (char) i);
         }
-    };
+    }
 }
+

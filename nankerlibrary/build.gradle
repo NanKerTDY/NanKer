@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -23,9 +23,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'org.litepal.android:core:1.5.1' //数据库
+    compile 'com.zhy:autolayout:1.4.5'  //屏幕适配
+    compile 'org.greenrobot:eventbus:3.0.0' //消息传递
+    compile 'com.github.lygttpod:SuperTextView:1.1.2' //快速开发TextView 根目录allprojects》repositories 加（maven { url "https://jitpack.io" }）
+//    compile 'com.github.ithedan:CustomViewBgUi:v1.0'  //（maven { url "https://jitpack.io" }）（有坑，只支持搞版本编译，测试到25）
+    compile 'com.orhanobut:logger:2.1.1' //https://github.com/orhanobut/logger
+    compile 'com.alibaba:fastjson:1.2.33'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }
