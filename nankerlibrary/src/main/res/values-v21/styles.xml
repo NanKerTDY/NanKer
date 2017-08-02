@@ -9,6 +9,4 @@
         <item name="android:listDivider">@drawable/divider</item>
     </style>
 
-    <style name="MyPopStyle">#000000</style>
-
 </resources>
