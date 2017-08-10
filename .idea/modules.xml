@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NanKe.iml" filepath="$PROJECT_DIR$/NanKe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nanker/Nanker.iml" filepath="$PROJECT_DIR$/Nanker/Nanker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nankerlibrary/nankerlibrary.iml" filepath="$PROJECT_DIR$/nankerlibrary/nankerlibrary.iml" />
+    </modules>
+  </component>
+</project>
