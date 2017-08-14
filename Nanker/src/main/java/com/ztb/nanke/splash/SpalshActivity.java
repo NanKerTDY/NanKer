@@ -8,6 +8,7 @@ import com.ztb.nankerlibrary.base.BaseActivity;
  */
 
 public class SpalshActivity extends BaseActivity {
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_spalsh;
