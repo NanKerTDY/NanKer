@@ -1,5 +1,7 @@
 package com.ztb.nanke.splash;
 
+import android.os.Bundle;
+
 import com.ztb.nanke.R;
 import com.ztb.nankerlibrary.base.BaseActivity;
 
@@ -14,4 +16,9 @@ public class SpalshActivity extends BaseActivity {
         return R.layout.activity_spalsh;
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 }
