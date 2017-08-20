@@ -33,6 +33,4 @@ dependencies {
 //    compile 'com.github.ithedan:CustomViewBgUi:v1.0'  //（maven { url "https://jitpack.io" }）（有坑，只支持高版本编译，测试到25）
     compile 'com.orhanobut:logger:2.1.1' //https://github.com/orhanobut/logger
     compile 'com.alibaba:fastjson:1.2.33'
-    compile 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }

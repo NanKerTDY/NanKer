@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="firstView">
+        <attr name="oneStr" format="string"/>
+        <attr name="oneColor" format="color"/>
+        <attr name="twoStr" format="string"/>
+        <attr name="twoColor" format="color"/>
+    </declare-styleable>
+</resources>

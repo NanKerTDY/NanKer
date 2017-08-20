@@ -11,7 +11,6 @@ import com.ztb.nankerlibrary.utils.EventUtil;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import butterknife.ButterKnife;
 
 /**
  * Created by nanker on 2017/4/20.
@@ -30,7 +29,6 @@ public class BaseActivity extends AppCompatActivity {
             setContentView(getLayoutId());
 //            initActionBar();
         }
-        ButterKnife.bind(this);
     }
 
     protected int getLayoutId() {
